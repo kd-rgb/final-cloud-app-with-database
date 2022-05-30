@@ -2,19 +2,17 @@ from django.contrib import admin
 # <HINT> Import any new Models here
 from .models import Choice, Course, Lesson, Instructor, Learner, Question
 
-# <HINT> Register QuestionInline and ChoiceInline classes here
-class QuestionInline(admin.StackedInline)
-    model = Question
-    extra = 10
-
-class ChoiceInline(admin.StackedInline)
-    model = Choice
-    extra = 10
-
 class LessonInline(admin.StackedInline):
     model = Lesson
     extra = 5
 
+class QuestionInline(admin.StackedInline):
+    model = Question
+    extra = 10
+
+class ChoiceInline(admin.StackedInline):
+    model = Choice
+    extra = 10
 
 # Register your models here.
 class CourseAdmin(admin.ModelAdmin):
